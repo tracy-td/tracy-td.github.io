@@ -75,6 +75,83 @@
     </ul>
   </li>
 
+      
+
+  <li class="toctree-l1">
+    <a href="#contribuindo">
+      Contribuindo
+      <span class="toctree-expand"></span>
+    </a>
+  </li>
+
+
+
+  <li class="toctree-l1">
+    <ul class="subnav-l1 toc-hidden">
+    
+      
+        <li class="toctree-l2">
+          <a class="toctree-l3" href="#indice">Índice:</a>
+        </li>
+    
+      
+        <li class="toctree-l2">
+          <a class="toctree-l3" href="#iniciando">Iniciando</a>
+        </li>
+    
+      
+        <li class="toctree-l2">
+          <a class="toctree-l3" href="#obtendo-ajuda">Obtendo ajuda</a>
+        </li>
+    
+      
+        <li class="toctree-l2">
+          <a class="toctree-l3" href="#comecando-a-contribuir">Começando a contribuir</a>
+        </li>
+    
+      
+        <li class="toctree-l2">
+          <a class="toctree-l3" href="#iniciando-o-desenvolvimento">Iniciando o desenvolvimento</a>
+        </li>
+    
+      
+        <li class="toctree-l2">
+          <a class="toctree-l3" href="#criando-issue">Criando issue</a>
+        </li>
+    
+      
+        <li class="toctree-l2">
+          <a class="toctree-l3" href="#atribuindo-uma-issue">Atribuindo uma issue</a>
+        </li>
+    
+      
+        <li class="toctree-l2">
+          <a class="toctree-l3" href="#fazendo-pull-request">Fazendo Pull Request</a>
+        </li>
+    
+      
+        <li class="toctree-l2">
+          <a class="toctree-l3" href="#contribuindo-com-o-codigo">Contribuindo com o código</a>
+        </li>
+    
+      
+        <li class="toctree-l2">
+          <a class="toctree-l3" href="#contribuindo-com-a-documentacao">Contribuindo com a documentação</a>
+        </li>
+    
+      
+        <li class="toctree-l2">
+          <a class="toctree-l3" href="#como-criar-um-relatorio-de-bug">Como criar um relatório de bug</a>
+        </li>
+    
+      
+        <li class="toctree-l2">
+          <a class="toctree-l3" href="#implementacao-dos-testes">Implementação dos testes</a>
+        </li>
+    
+    </ul>
+  </li>
+
 
   
     
@@ -149,6 +226,91 @@
 <p>Gerência de Dívidas Técnicas Orientada a Negócios</p>
 <h2 id="subtitulo">subtítulo</h2>
 <p>acesse: http://ayty.org</p>
+<h1 id="contribuindo">Contribuindo</h1>
+<h2 id="indice">Índice:</h2>
+<ul>
+<li><a href="#iniciando">Iniciando</a></li>
+<li><a href="#obtendo-ajuda">Obtendo ajuda</a></li>
+<li><a href="#comeando-a-contribuir">Começando a contribuir</a></li>
+<li><a href="#iniciando-o-desenvolvimento">Iniciando o desnvolvimento</a></li>
+<li><a href="#criando-issue">Criando uma issue</a></li>
+<li><a href="#atribuindo-uma-issue">Atribuindo uma issue</a></li>
+<li><a href="#contribuindo-com-o-cdigo">Contribuindo com o código</a></li>
+<li><a href="#contribuindo-com-a-documentao">Contribuindo com a documentação</a></li>
+<li><a href="#implementao-dos-testes">Implementação dos testes</a></li>
+</ul>
+<h2 id="iniciando">Iniciando</h2>
+<p>Aconcelhamos que após a leitura desse arquivo, você de uma olhada nas issues iniciais do projeto, e siga os exemplos de 
+como contribuir com o código.</p>
+<h2 id="obtendo-ajuda">Obtendo ajuda</h2>
+<p>A comunidade de contribuições da Tracy-TD possui um canal de comunicação no <a href="https://discord.gg/AwaqbGPRkd">Discord</a>, assim 
+novos integrantes podem tirar suas dúvidas e interagir com outros membros.</p>
+<h2 id="comecando-a-contribuir">Começando a contribuir</h2>
+<p>Para você que é iniciante, sugerimos que pegue uma issue simples, para começar a se familiarizar com o projeto, as issue 
+para os iniciantes se encontram neste link (COLOCAR O LINK), essas issues possuem a Labels de "good first issue".</p>
+<h2 id="iniciando-o-desenvolvimento">Iniciando o desenvolvimento</h2>
+<p>Para iniciar o desenvolvimento é necessário criar uma branch, existe como padrão,
+dois tipos de branchs,  feature e bugfix:</p>
+<ul>
+<li>feature: Prefixo de branch para nova funcionalidade ou melhoria;</li>
+<li>Nova funcionalidade: Uma nova função para a API a qual ainda não existe;</li>
+<li>Melhoria: Melhoria de uma função já existente ou parte do código.</li>
+<li>bugfix: Prefixo de branch que corrige algum bug em código.</li>
+</ul>
+<p>Sabendo dos prefixos de cada tipo de issue, preencha o sufixo do nome da branch
+com "/#" seguido do número da Issue.</p>
+<p>Exemplo: "feature/#xxxx", "bugfix/#yyyy".</p>
+<p>Criando uma branch via terminal: 
+- git checkout - b \<nome da branch>
+  - Esse comando cria a branch com o nome passado no parâmetro (não utilizar os "&lt;&gt;") e ainda troca para branch atual de uso.</p>
+<h2 id="criando-issue">Criando issue</h2>
+<p>Se você encontrou algum bug ou quer sugerir alguma funcionalidade, você pode criar uma issue nesse LINK (botar o link)</p>
+<p>Para criar uma nova Issue, você pode seguir os seguintes passos, todos os passos a seguir começam ao acessar a aba de 
+<a href="https://github.com/rodrigor/tracy-api/issues">Issues</a>, ou já no template de <a href="https://github.com/rodrigor/tracy-api/issues/new">New issue</a> do repositório:</p>
+<p>Dentro do template de New issue, no input de "Title", escreva brevimente o que a nova issue deve fazer, e então no input 
+de "Leave a comment", faça uma descrição mais detalhada sobre como a issue deve ser executada/implementada. Após as especificações 
+da nova issue, ao lado direito existe alguns complementos importantes:
+- Em "Assignees" você pode escolher a pessoa responsável para a execução da issue, caso o objetivo seja apenas deixar a issue registrada, não precisa atribuir, caso queira pegar uma issue, siga para seção <a href="#atribuindo-uma-issue">atribuindo uma issue</a>.
+- Em "Labels" você define que tipo de feature e caracteristica essa issue possui, como "bug", para uma issue referente a um bug no sistema, "documentation" issue que mexe com algum arquivo refente a documentação do projeto, "enhancement", para issue referente a uma nova feature ou melhoria para o sistema, existem varias labels e. Issue podem receber varias labels e não são obrigatórias para a criação de uma.</p>
+<p>Após esses passos a sua issue está pronta para ser criada, clique em "Submite new issue" e receba a nova issue com um "#" seguido de um valor numérico, um identificador para a issue, e este identificador será utilizado no comentário do seu Pull Request para ser feito o link entre a issue e o Pull Request.</p>
+<h2 id="atribuindo-uma-issue">Atribuindo uma issue</h2>
+<p>Para atribuir uma issue, você precisa acessa a aba de <a href="https://github.com/rodrigor/tracy-api/issues">Issues</a>, ao selecionar uma issue, 
+ela será aberta e poderá receber atribuição(ões) ao clicar em "Assignees", então selecionar quem deverá fazer parte do desenvolvimento dessa issue. 
+Lembrando que em Assigness, não serão as mesmas pessoas que irão revisar o seu <a href="#fazendo-pull-request">Pull Request</a>.</p>
+<h2 id="fazendo-pull-request">Fazendo Pull Request</h2>
+<p>Ao concluir a sua contribuição é hora de fazer o famoso Pull Request, onde ele será revisado pela comunidade e então, 
+se tudo estiver de acordo com as expectativas dos revisadores o Pull Request será aceito. Mas para isso, é preciso seguir alguns passos 
+primeiro, é preciso preparar os arquivos que serão adicionados para o commit e consequentemente para o Pull Request/Revisão, com os seguintes passos no terminal:</p>
+<ul>
+<li><code>git add "{nome do arquivo}"</code> ou <code>git add .</code>, que adiciona o arquivo menscionado ou todos os arquivos salvos e 
+modificados ao Stage, também pode ser chamado de Index ou Staging Area:</li>
+<li>O Staging Area é um lugar onde os arquivos estão sendo preparados para o commit.</li>
+<li><code>git commit -m "{mensagem do commit}"</code>, com esse comando você transfere seus arquivos para o diretório local do git com uma mensagem sobre o commit, muito importante que essa mensagem contenha informações sobre as alterações feitas e referencie a issue associada a contribuição:</li>
+<li>A mensagem do commit deve conter uma referência a issue, essa referência é feita atraves de <code>#</code> seguido do número de 
+identificação da issue no github, seguido de uma breve descrição do que foi feito.</li>
+<li><code>git push</code>, com o git push, os arquivos serão enviados para o repositório da nuvem do github:</li>
+<li>É possivel que peça suas credenciais, informe elas e continue o procedimento;</li>
+<li>Caso a branch ainda não exista no repositório do github, será exibido uma mensagem para no terminal para publicar a branch, 
+copie a mensagem e execute para subir suas alterações;</li>
+<li>No repositório do github do projeto, ao estar logado com as credenciais iguais as informadas, será exibido uma mensagem informado que 
+existe um Pull Request para ser solicitado...</li>
+</ul>
+<h2 id="contribuindo-com-o-codigo">Contribuindo com o código</h2>
+<p>Para contribuição de código temos 3 categorias para uma issue:
+- Nova funcionalidade, são acressimos de novas funções ou recursos que ainda não existem no projeto, e possui como titulo da branch "feature".
+- Melhoria, são mudnaças em funções ou recursos que á existem no projeto, possuindo o titulo de branch "feature".
+- Bug, os bugs são dividos em dois, críticos e não críticos, ambos possuiem o titulo de branch "bugfix":
+  - Críticos, afetam gravimente alguma funcionalidade importante do sistema, o que torna a aplicação inutilizavel ou de dificil acesso.
+  - Não críticos, são os bugs que causam apenas um leve incomodo na aplicação, onde não chegam a causar tanto impacto na funcionalidade.</p>
+<h2 id="contribuindo-com-a-documentacao">Contribuindo com a documentação</h2>
+<p>A documentação de um software sempre muda de acordo com as novas funcionalidades que são desenvolvidas, desta forma, 
+atualizações são necessárias para que o software e documentação estejam sempre alinhados, essa é um tipo de contribuição 
+importante para manter a integridade entre os desenvolvedores e quem faz uso da ferramenta. Veja a documentação aqui.(COLOCAR LINK)</p>
+<p>Outros arquivos como o README, Código de condulta e o este guia de contribuições podem receber novas alterações se forem 
+necessárias, abra uma issue e comece a contribuir agora mesmo.</p>
+<h2 id="como-criar-um-relatorio-de-bug">Como criar um relatório de bug</h2>
+<h2 id="implementacao-dos-testes">Implementação dos testes</h2>
+<p>TODO isso aqui é um md a parte que terar um link para ser acessado daqui</p>
               
             </div>
           </div>
@@ -197,5 +359,5 @@
 
 <!--
 MkDocs version : 1.2.3
-Build Date UTC : 2021-11-19 18:45:40.064980+00:00
+Build Date UTC : 2021-11-19 21:58:27.373357+00:00
 -->
