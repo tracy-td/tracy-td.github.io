@@ -1,6 +1,0 @@
-site_name: Tracy-TD Documentation
-theme:
-    name: 'rtd-dropdown'
-    prev_next_buttons_location: both
-    titles_only: 'true'
-    locale: pt_BR
