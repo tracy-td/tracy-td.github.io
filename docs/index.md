@@ -20,7 +20,7 @@ acesse: http://ayty.org
 
 ## Iniciando
 
-Aconcelhamos que após a leitura desse arquivo, você de uma olhada nas issues iniciais do projeto, e siga os exemplos de 
+Aconselhamos que após a leitura desse arquivo, você dê uma olhada nas issues iniciais do projeto, e siga os exemplos de 
 como contribuir com o código.
 
 ## Obtendo ajuda
@@ -30,27 +30,26 @@ novos integrantes podem tirar suas dúvidas e interagir com outros membros.
 
 ## Começando a contribuir
 
-Para você que é iniciante, sugerimos que pegue uma issue simples, para começar a se familiarizar com o projeto, as issue 
+Para você que é iniciante, sugerimos que pegue uma issue simples para começar a se familiarizar com o projeto. As issues 
 para os iniciantes se encontram neste link (COLOCAR O LINK), essas issues possuem a Labels de "good first issue".
 
 ## Iniciando o desenvolvimento
 
-Para iniciar o desenvolvimento é necessário criar uma branch, existe como padrão,
-dois tipos de branchs,  feature e bugfix:
+Para iniciar o desenvolvimento é necessário criar uma branch. Existem dois tipos de branches: feature e bugfix:
 
 - feature: Prefixo de branch para nova funcionalidade ou melhoria;
-  - Nova funcionalidade: Uma nova função para a API a qual ainda não existe;
+  - Nova funcionalidade: Uma nova função para a API;
   - Melhoria: Melhoria de uma função já existente ou parte do código.
 - bugfix: Prefixo de branch que corrige algum bug em código.
 
 Sabendo dos prefixos de cada tipo de issue, preencha o sufixo do nome da branch
 com "/#" seguido do número da Issue.
 
-Exemplo: "feature/#xxxx", "bugfix/#yyyy".
+Exemplo: `feature/#xxxx`, `bugfix/#yyyy`.
 
 Criando uma branch via terminal: 
-- git checkout - b \<nome da branch>
-  - Esse comando cria a branch com o nome passado no parâmetro (não utilizar os "<>") e ainda troca para branch atual de uso.
+- `git checkout - b \<nome da branch>`
+  - Esse comando cria a branch com o nome passado no parâmetro (não utilize os "<>") e ainda troca para branch atual de uso.
 
 ## Criando issue
 
