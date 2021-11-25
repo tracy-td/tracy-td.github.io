@@ -3,7 +3,7 @@
 Serão demonstradas neste guia de teste, as 4 funções de um CRUD e exceção, para que assim, seja possivel que se tenha
 uma ideia basica de como continuar com a implementação de testes.
 
-Um teste é composto por 3 fazes, preparação, execução e validação.
+Um teste é composto por 3 fases: preparação, execução e validação.
 - Preparação: nessa etapa é criado todos os argumentos necessários e configurações para que o teste possa representar o mais próximo do cenario real;
 - Execução: aqui onde se utiliza os argumentos produzidos na preparação e executamos o metodo do serviço a qual queremos testar;
 - Validação: a fase mais importante de um teste, onde ocorre todas as verificações da execução do teste e se ocorreu como esperado;
@@ -15,7 +15,7 @@ projeto em "src/test/java/org/{nome_do_projeto}" dentro de um diretório que o s
 o diretório é "technicalDebt", resultando no seguinte path: "src/test/java/org/tracy/technicaldebt", logo após adicionamos a anotação @Tag("Service") e 
 @ExtendWith(MockitoExtension.class) em cima do "public class".
 
-```
+```java
 @Tag("Service")
 @ExtendWith(MockitoExtension.class)
 public class TechnicalDebtServiceTest {
@@ -25,7 +25,7 @@ public class TechnicalDebtServiceTest {
 Agora precisamos pegar os atributos da classe de serviço para a qual os testes devem ser feitos e passar como atributos da classe teste,
 os atributos que forem outros serviços e repositórios, devem receber a anotação @Mock.
 
-```
+```java
 @Tag("Service")
 @ExtendWith(MockitoExtension.class)
 public class TechnicalDebtServiceTest {
@@ -47,7 +47,7 @@ Após todos os atributos necessários para a classe de serviço estiverem "mocka
 instância do serviço, isso pode ser feito atraves da anotação @InjectMocks ou através de um metodo de construção anotado por um @Beforeach, damos 
 preferencia ao @InjectMocks.
 
-```
+```java
 @Tag("Service")
 @ExtendWith(MockitoExtension.class)
 public class TechnicalDebtServiceTest {
@@ -82,7 +82,7 @@ nesta anotação você pode escrever em qualquer lingua, desde que fique claro e
 Como primeiro exemplo, será testado a criação de uma TechnicalDebt, então, para o nome do metodo de teste algo parecido com 
 "shouldSaveTechnicalDebt", com o retorno void e duas anotações, no DisplayName evidenciando a validação do teste:
 
-```
+```java
     @Test
     @DisplayName("Deve salvar uma divida tecnica")
     void shouldSaveTechnicalDebt() {
@@ -97,7 +97,7 @@ No metodo save, vemos dois parametros "TechnicalDebt" e "Feedback", os quais pre
 Então, em uma breve analise notamos que precisamos mockar o retorno do saveAndFlush() do repositório "technicalDebtRepository". 
 Para o teste em questão é necessário mockar outros comportamentos de outras classes (serviços e repositórios), mas para esse guia não ficar extenso não serão detalhados.
 
-```
+```java
     @Transactional
     public TechnicalDebt save(TechnicalDebt technicalDebt, Feedback feedback) {
 	    initializeLists(technicalDebt);
@@ -127,7 +127,7 @@ retornos, e para facilitar a contrução de tais objetos utilizamos os métodos 
 Na linha 148 o comportamento do repositório é simulado, utilizando o "when()", note que é preciso especificar qual método a classe mockada está chamando e 
 passar como parâmetro a classe que o método espera, e no ".return()", a simulação do retorno, o objeto technicalDebt. 
 
-```
+```java
     @Test
     @DisplayName("Deve salvar uma divida tecnica")
     void shouldSaveTechnicalDebt() {
@@ -149,7 +149,7 @@ passar como parâmetro a classe que o método espera, e no ".return()", a simula
 Com as entidades criadas e retornos simulados como esperado, continuamos para a segunda etapa do teste, a execução, bem simples, 
 apenas chamamos o método a qual queremos testar e passamos seus devidos parâmetros.
 
-```
+```java
     @Test
     @DisplayName("Deve salvar uma divida tecnica")
     void shouldSaveTechnicalDebt() {
@@ -177,7 +177,7 @@ ocorrência, que para esse exemplo vamos focar no "saveAndFlush()", linha 158, q
 que é justamento a classe que chega para ser salva no repositório. Com o método "capture()" do ArgumentCaptor para capturar o valor e depois utilizamos o 
 método "getValue()" para pegar o valor capturado e armazenar em uma variável, essa variável será utilizado para verificação dos campos. 
 
-```
+```java
         ArgumentCaptor<TechnicalDebt> technicalDebtArgumentCaptor = ArgumentCaptor.forClass(TechnicalDebt.class);
         ArgumentCaptor<PriorityLog> priorityLogArgumentCaptor = ArgumentCaptor.forClass(PriorityLog.class);
 
@@ -195,7 +195,7 @@ dessa maneira validando campo a campo, importante que todos os campos sejam vali
 algum valor seja alterado, e essa alteração possa ser parte do fluxo ou um bug gerado, é aqui que está a importância do teste unitário,
 ele garante que para aquele fluxo o comportamento seja o esperado.
 
-```
+```java
     @Test
     @DisplayName("Deve salvar uma divida tecnica")
     void shouldSaveTechnicalDebt() {
@@ -251,7 +251,7 @@ ele garante que para aquele fluxo o comportamento seja o esperado.
 Builders são os metodos que fazem instância da classe e que você pode alterar os campos enquanto chama o método, como na linha 142 onde o campo "id" está sendo setado com o valor 1L. 
 Os builders ficam no path referente aos testes, em: "src/test/java/org/tracy/builders". Builders podem possuir outros builders para facilitar a sua construção, mas cuidado para não gerar recursão entre eles.
 
-```
+```java
 public class ConfigItemBuilder {
 
     public static ConfigItem.Builder createConfigItem() {
