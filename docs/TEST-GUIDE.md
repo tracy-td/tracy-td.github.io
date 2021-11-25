@@ -15,18 +15,62 @@ projeto em "src/test/java/org/{nome_do_projeto}" dentro de um diretório que o s
 o diretório é "technicalDebt", resultando no seguinte path: "src/test/java/org/tracy/technicaldebt", logo após adicionamos a anotação @Tag("Service") e 
 @ExtendWith(MockitoExtension.class) em cima do "public class".
 
-![](resources\TechnicalDebtServiceTest_01.png)
+```
+@Tag("Service")
+@ExtendWith(MockitoExtension.class)
+public class TechnicalDebtServiceTest {
 
+}
+```
 Agora precisamos pegar os atributos da classe de serviço para a qual os testes devem ser feitos e passar como atributos da classe teste,
 os atributos que forem outros serviços e repositórios, devem receber a anotação @Mock.
 
-![](resources\TechnicalDebtServiceTest_02.png)
+```
+@Tag("Service")
+@ExtendWith(MockitoExtension.class)
+public class TechnicalDebtServiceTest {
+
+    @Mock
+    private ITAssetService assetService;
+
+    @Mock
+    private BusinessProcessService businessProcessService;
+
+    @Mock
+    private BusinessMetricService businessMetricService;
+    
+    ...
+}
+```
 
 Após todos os atributos necessários para a classe de serviço estiverem "mockados" deve ser injetado todos os mocks em uma 
 instância do serviço, isso pode ser feito atraves da anotação @InjectMocks ou através de um metodo de construção anotado por um @Beforeach, damos 
 preferencia ao @InjectMocks.
 
-![](resources\TechnicalDebtServiceTest_03.png)
+```
+@Tag("Service")
+@ExtendWith(MockitoExtension.class)
+public class TechnicalDebtServiceTest {
+
+    @Mock
+    private ITAssetService assetService;
+
+    @Mock
+    private BusinessProcessService businessProcessService;
+
+    @Mock
+    private BusinessMetricService businessMetricService;
+    
+    ...
+    
+    @Mock
+    private BusinessCanvasService businessCanvasService;
+
+    @InjectMocks
+    private TechnicalDebtService technicalDebtService;
+    
+}
+```
 
 Com todos as dependências injetadas no serviço para ser testado, partimos para criação do teste unitário, na mesma classe, 
 iniciamos o método de teste com uma nomeclatura a qual deve de forma mais clara possivel identificar a validação do teste. 
@@ -38,16 +82,44 @@ nesta anotação você pode escrever em qualquer lingua, desde que fique claro e
 Como primeiro exemplo, será testado a criação de uma TechnicalDebt, então, para o nome do metodo de teste algo parecido com 
 "shouldSaveTechnicalDebt", com o retorno void e duas anotações, no DisplayName evidenciando a validação do teste:
 
-![](resources\TechnicalDebtServiceTest_04.png)
+```
+    @Test
+    @DisplayName("Deve salvar uma divida tecnica")
+    void shouldSaveTechnicalDebt() {
+    
+    }
+```
 
 Agora vamos para a primeira etapa do teste, a preparação, aqui vamos olhar para o fluxo metodo "save" do serviço "TechnicalDebtService" 
 e criar as entidades e configurações que precisaremos para a segunda e terceira etapa.
 
 No metodo save, vemos dois parametros "TechnicalDebt" e "Feedback", os quais precisamos então cria-los na preparação do teste, a primeira etapa. 
-Então, em uma breve analise notamos que precisamos mockar o retorno do saveAndFlush() do repositório "technicalDebtRepository" (linha 110). 
+Então, em uma breve analise notamos que precisamos mockar o retorno do saveAndFlush() do repositório "technicalDebtRepository". 
 Para o teste em questão é necessário mockar outros comportamentos de outras classes (serviços e repositórios), mas para esse guia não ficar extenso não serão detalhados.
 
-![](resources\TechnicalDebtServiceTest_06.png)
+```
+    @Transactional
+    public TechnicalDebt save(TechnicalDebt technicalDebt, Feedback feedback) {
+	    initializeLists(technicalDebt);
+
+	    if(technicalDebt.getBusinessPriority() == null){
+            technicalDebt.setBusinessPriority(BusinessPriorityValue.UNDEFINED.value);
+        }
+        if(technicalDebt.getIssue() != null && technicalDebt.getIssue().getAssignedTo() != null){
+            technicalDebt.setAssignedTo(technicalDebt.getAssignedTo()); //TODO aqui está pegando o mesmo valor e setando o mesmo valor? qual o sentido?
+        }
+
+	    List<TechnicalDebtImpact> impactsToChange = technicalDebt.getTechnicalDebtImpacts();
+        technicalDebt.setTechnicalDebtImpacts(new LinkedList<>());
+        TechnicalDebt technicalDebtAfterSave = this.technicalDebtRepository.saveAndFlush(technicalDebt);
+        persistTechImpacts(technicalDebt);
+        updateTechnicalDebtImpacts(technicalDebtAfterSave, impactsToChange);
+        updateAndSaveBusinessPriority(technicalDebtAfterSave, "TD_CREATE", feedback);
+        this.technicalDebtRepository.flush();
+
+        return technicalDebtAfterSave;
+    }
+```
 
 Na primeira etapa criamos os objetos e configuramos os retornos mocks dos atributos anotados com @Mock através do 
 metodo "when()" do Mockito seguido de um ".return()" com o objeto simulado no retorno real do método da classe mockada, mas primeiro, precisamos construir esses 
@@ -55,24 +127,144 @@ retornos, e para facilitar a contrução de tais objetos utilizamos os métodos 
 Na linha 148 o comportamento do repositório é simulado, utilizando o "when()", note que é preciso especificar qual método a classe mockada está chamando e 
 passar como parâmetro a classe que o método espera, e no ".return()", a simulação do retorno, o objeto technicalDebt. 
 
-![](resources\TechnicalDebtServiceTest_05.png)
+```
+    @Test
+    @DisplayName("Deve salvar uma divida tecnica")
+    void shouldSaveTechnicalDebt() {
+
+        ConfigItem configItemReturn = createConfigItem().id(1L).build();
+        TechnicalDebt technicalDebt = createTechnicalDebt().build();
+        Feedback feedback = createFeedBack().build();
+        PriorityCanvas priorityCanvas = createPriorityCanvas().build();
+
+        when(configItemService.findById(anyLong())).thenReturn(configItemReturn);
+        when(technicalDebtRepository.saveAndFlush(any(TechnicalDebt.class))).thenReturn(technicalDebt);
+        when(technicalDebtRepository.save(any(TechnicalDebt.class))).thenReturn(technicalDebt);
+        when(priorityCanvasRepository.findAllByOrganizationId(anyLong()))
+                .thenReturn(Collections.singletonList(priorityCanvas));
+                
+    }
+```
 
 Com as entidades criadas e retornos simulados como esperado, continuamos para a segunda etapa do teste, a execução, bem simples, 
-apenas chamamos o método a qual queremos testar e passamos seus devidos parâmetros (linha 153).
+apenas chamamos o método a qual queremos testar e passamos seus devidos parâmetros.
 
-![](resources\TechnicalDebtServiceTest_07.png)
+```
+    @Test
+    @DisplayName("Deve salvar uma divida tecnica")
+    void shouldSaveTechnicalDebt() {
+    
+        ...
+        
+        when(configItemService.findById(anyLong())).thenReturn(configItemReturn);
+        when(technicalDebtRepository.saveAndFlush(any(TechnicalDebt.class))).thenReturn(technicalDebt);
+        when(technicalDebtRepository.save(any(TechnicalDebt.class))).thenReturn(technicalDebt);
+        when(priorityCanvasRepository.findAllByOrganizationId(anyLong()))
+                .thenReturn(Collections.singletonList(priorityCanvas));
 
+        technicalDebtService.save(technicalDebt, feedback);
+
+        ArgumentCaptor<TechnicalDebt> technicalDebtArgumentCaptor = ArgumentCaptor.forClass(TechnicalDebt.class);
+        ArgumentCaptor<PriorityLog> priorityLogArgumentCaptor = ArgumentCaptor.forClass(PriorityLog.class);
+
+```
 Depois da preparação e execução, chegou a vez da validação dos resultados, em alguns casos, é preciso saber como o objeto chegou ao 
-repositório/serviço, momento que o objeto chega no parâmetro do método, e para isso é necessário a criação de objetos do tipo ArgumentCaptor, ele 
-é capaz de capturar os objetos que são passados por parâmetros e é usado em conjunto com o método "verify()", o método verify, 
+repositório/serviço, momento que o objeto é passado por parâmetro do método, e para isso é necessário a criação de objetos do tipo ArgumentCaptor, ele 
+é capaz de capturar os objetos nos parâmetros e é usado em conjunto com o método "verify()", o método verify, 
 verifica as ocorrências das chamadas aos métodos da classe que foram utilizados durante a execução do teste, que por padrão é "times(1)", 
-uma ocorrência daquele objeto, segundo parâmetro do método verify(), em seguida utilizasse o "." mas o método que deseja verificar a 
+uma ocorrência do método da instância, o times é o segundo parâmetro do método verify(), em seguida utilizasse o "." mas o método que deseja verificar a 
 ocorrência, que para esse exemplo vamos focar no "saveAndFlush()", linha 158, que é passado como parametro um ArgumentCaptor do tipo TechnicalDebt, 
-que é justamento a classe que chega para ser salva no repositório.
+que é justamento a classe que chega para ser salva no repositório. Com o método "capture()" do ArgumentCaptor para capturar o valor e depois utilizamos o 
+método "getValue()" para pegar o valor capturado e armazenar em uma variável, essa variável será utilizado para verificação dos campos. 
 
-![](resources\TechnicalDebtServiceTest_08.png)
+```
+        ArgumentCaptor<TechnicalDebt> technicalDebtArgumentCaptor = ArgumentCaptor.forClass(TechnicalDebt.class);
+        ArgumentCaptor<PriorityLog> priorityLogArgumentCaptor = ArgumentCaptor.forClass(PriorityLog.class);
+
+        verify(technicalDebtRepository).saveAndFlush(technicalDebtArgumentCaptor.capture());
+        TechnicalDebt beforeSaveTechnicalDebt = technicalDebtArgumentCaptor.getValue();
+        verify(impactService).saveAll(any());
+        verify(technicalDebtRepository).save(technicalDebtArgumentCaptor.capture());
+        TechnicalDebt afterSaveTechnicalDebt = technicalDebtArgumentCaptor.getValue();
+        verify(logRepository).save(priorityLogArgumentCaptor.capture());
+        PriorityLog priorityLog = priorityLogArgumentCaptor.getValue();
+```
+
+A verificação dos campos é feita através dos assertions, aqui se compara os valores atuais dos valores esperados, 
+dessa maneira validando campo a campo, importante que todos os campos sejam validados, pois, durante o fluxo é possível que 
+algum valor seja alterado, e essa alteração possa ser parte do fluxo ou um bug gerado, é aqui que está a importância do teste unitário,
+ele garante que para aquele fluxo o comportamento seja o esperado.
+
+```
+    @Test
+    @DisplayName("Deve salvar uma divida tecnica")
+    void shouldSaveTechnicalDebt() {
+        
+        ...
+        
+        verify(technicalDebtRepository).saveAndFlush(technicalDebtArgumentCaptor.capture());
+        TechnicalDebt beforeSaveTechnicalDebt = technicalDebtArgumentCaptor.getValue();
+        verify(impactService).saveAll(any());
+        verify(technicalDebtRepository).save(technicalDebtArgumentCaptor.capture());
+        TechnicalDebt afterSaveTechnicalDebt = technicalDebtArgumentCaptor.getValue();
+        verify(logRepository).save(priorityLogArgumentCaptor.capture());
+        PriorityLog priorityLog = priorityLogArgumentCaptor.getValue();
+        
+        assertAll("beforeSaveTechnicalDebt",
+                () -> assertThat(beforeSaveTechnicalDebt.getName(), is(technicalDebt.getName())),
+                () -> assertThat(beforeSaveTechnicalDebt.getDescription(), is(technicalDebt.getDescription())),
+                () -> assertThat(beforeSaveTechnicalDebt.getBusinessPriority(), is(technicalDebt.getBusinessPriority())),
+                () -> assertThat(beforeSaveTechnicalDebt.getTechnicalPriority(), is(technicalDebt.getTechnicalPriority())),
+                () -> assertThat(beforeSaveTechnicalDebt.getCheckedByUser(), is(technicalDebt.getCheckedByUser())),
+                () -> assertThat(beforeSaveTechnicalDebt.getEnabled(), is(technicalDebt.getEnabled())),
+                () -> assertThat(beforeSaveTechnicalDebt.getType(), is(technicalDebt.getType()))
+        );
+        
+        assertAll("afterSaveTechnicalDebt",
+                () -> assertThat(afterSaveTechnicalDebt.getTechnicalPriority(), is(technicalDebt.getTechnicalPriority())),
+                () -> assertThat(afterSaveTechnicalDebt.getName(), is(technicalDebt.getName())),
+                () -> assertThat(afterSaveTechnicalDebt.getDescription(), is(technicalDebt.getDescription())),
+                () -> assertThat(afterSaveTechnicalDebt.getBusinessPriority(), is(technicalDebt.getBusinessPriority())),
+                () -> assertThat(afterSaveTechnicalDebt.getTechnicalPriority(), is(technicalDebt.getTechnicalPriority())),
+                () -> assertThat(afterSaveTechnicalDebt.getCheckedByUser(), is(technicalDebt.getCheckedByUser())),
+                () -> assertThat(afterSaveTechnicalDebt.getEnabled(), is(technicalDebt.getEnabled())),
+                () -> assertThat(afterSaveTechnicalDebt.getType(), is(technicalDebt.getType()))
+        );
+        
+        assertAll("priorityLog",
+                () -> assertThat(priorityLog.getTrigger(), is("TD_CREATE")),
+                () -> assertThat(priorityLog.getTdType(), is("TechnicalDebtType Name")),
+                () -> assertThat(priorityLog.getOldBusinessPriority(), is(1000)),
+                () -> assertThat(priorityLog.getNewBusinessPriority(), is(100)),
+                () -> assertThat(priorityLog.getOldTechnicalPriority(), is(1000)),
+                () -> assertThat(priorityLog.getNewTechnicalPriority(), is(1000)),
+                () -> assertThat(priorityLog.getComment(), is("FeedBack Comment")),
+                () -> assertFalse(priorityLog.getPrioritizedByImpact()),
+                () -> assertFalse(priorityLog.getPrioritizedByEffort()),
+                () -> assertFalse(priorityLog.getPrioritizedByType()),
+                () -> assertFalse(priorityLog.getPrioritizedByAge())
+        );
+    }
+```
+
 
 Builders são os metodos que fazem instância da classe e que você pode alterar os campos enquanto chama o método, como na linha 142 onde o campo "id" está sendo setado com o valor 1L. 
 Os builders ficam no path referente aos testes, em: "src/test/java/org/tracy/builders". Builders podem possuir outros builders para facilitar a sua construção, mas cuidado para não gerar recursão entre eles.
 
-![](resources\ConfigItemBuilder.png)
+```
+public class ConfigItemBuilder {
+
+    public static ConfigItem.Builder createConfigItem() {
+        return ConfigItem.builder()
+                .id(1L)
+                .name("ConfigItem Name")
+                .description("ConfigItem Description")
+                .type(createConfigItemType().build())
+                .status(Status.OPERATIONAL)
+                .children(Collections.singletonList(createConfigItemChildren().build()))
+                .organization(createOrganization().build())
+                .affectedITAssets(Collections.singletonList(createITAsset().build()))
+                .teams(Collections.singletonList(createTeam().build()));
+    }
+}
+```
