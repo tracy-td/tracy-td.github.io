@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Arquitetura de Tracy-TD - Tracy-TD Documentation</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+  <link href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Arquitetura de Tracy-TD";
+    var mkdocs_page_input_path = "architecture.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Tracy-TD Documentation</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="tocbase current">
+    
+    
+      
+
+
+  <li class="navtree toctree-l1 inactive">
+    <a class="" href="..">Documentação: Tracy-TD</a>
+  </li>
+    
+      
+
+
+  <li class="navtree toctree-l1 inactive">
+    <a class="" href="../CODE-OF-CONDUCT/">Código de conduta</a>
+  </li>
+    
+      
+
+
+  <li class="navtree toctree-l1 inactive">
+    <a class="" href="../CONTRIBUTING/">Contribuindo</a>
+  </li>
+    
+      
+
+
+  <li class="navtree toctree-l1 inactive">
+    <a class="" href="../TEST-GUIDE/">TEST GUIDE</a>
+  </li>
+    
+      
+
+
+  
+    
+    <li class="navtree toctree-l1 page current">
+      <a class="current" href="./">
+        Arquitetura de Tracy-TD
+      </a>
+    </li>
+    
+      
+
+
+
+
+  
+    
+      
+
+
+  <li class="navtree toctree-l1 inactive">
+    <a class="" href="../esboco/">Esboço de regras de Tracy</a>
+  </li>
+    
+      
+  <li class="navtree toctree-l1 label">
+    <p class="caption">Config</p>
+  </li>
+
+
+  
+
+  
+    <li class="navtree toctree-l1 group">
+      <ul class="navtree subnav-l1 current">
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../config/tracy-api-installation/">Instalação - Tracy API</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../config/tracy-front-instalation/">Instalação - Tracy Front</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../config/tracy-td_architecture/">Arquitetura</a>
+  </li>
+        
+      </ul>
+    </li>
+    
+  </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Tracy-TD Documentation</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Arquitetura de Tracy-TD</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="arquitetura-de-tracy-td">Arquitetura de Tracy-TD</h1>
+<div class="mxgraph" style="max-width:100%;border:1px solid transparent;" data-mxgraph="{&quot;highlight&quot;:&quot;#0000ff&quot;,&quot;nav&quot;:true,&quot;resize&quot;:true,&quot;page&quot;:0,&quot;toolbar&quot;:&quot;pages zoom layers tags lightbox&quot;,&quot;xml&quot;:&quot;&lt;mxfile host=\&quot;app.diagrams.net\&quot; modified=\&quot;2021-12-13T23:13:30.800Z\&quot; agent=\&quot;5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.93 Safari/537.36\&quot; etag=\&quot;catdLu2Rab1RSWOxDYXp\&quot; version=\&quot;15.9.5\&quot; type=\&quot;google\&quot; pages=\&quot;4\&quot;&gt;&lt;diagram id=\&quot;gQHlQ4lndHkcEeVauz0A\&quot; name=\&quot;1 - Tracy-TD - System Level\&quot;&gt;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&lt;/diagram&gt;&lt;diagram id=\&quot;bNbior7N5j1gQgMDkXlz\&quot; name=\&quot;2 - Container - Tracy-TD\&quot;&gt;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&lt;/diagram&gt;&lt;diagram id=\&quot;dhaCDTiXGWUVRBG56g8m\&quot; name=\&quot;3 - Tracy-API\&quot;&gt;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&lt;/diagram&gt;&lt;diagram id=\&quot;DOdPGd4Feo7_D7jM0khF\&quot; name=\&quot;4 - Comp. Tracy-Front\&quot;&gt;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&lt;/diagram&gt;&lt;/mxfile&gt;&quot;}"></div>
+<script type="text/javascript" src="https://viewer.diagrams.net/js/viewer-static.min.js"></script>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../esboco/" class="btn btn-neutral float-right" title="Esboço de regras de Tracy">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../TEST-GUIDE/" class="btn btn-neutral" title="TEST GUIDE"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../TEST-GUIDE/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../esboco/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+
+</body>
+</html>
