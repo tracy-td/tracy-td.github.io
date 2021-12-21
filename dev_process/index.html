@@ -7,24 +7,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   
-  <link rel="shortcut icon" href="../../img/favicon.ico">
-  <title>Arquitetura - Tracy-TD Documentation</title>
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Development Process - Tracy-TD Documentation</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
   <link href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' rel='stylesheet' type='text/css'>
 
-  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Arquitetura";
-    var mkdocs_page_input_path = "config/tracy-td_architecture.md";
+    var mkdocs_page_name = "Development Process";
+    var mkdocs_page_input_path = "dev_process.md";
     var mkdocs_page_url = null;
   </script>
   
-  <script src="../../js/jquery-2.1.1.min.js" defer></script>
-  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
   <script>hljs.initHighlightingOnLoad();</script> 
   
@@ -37,9 +37,9 @@
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
       <div class="wy-side-nav-search">
-        <a href="../.." class="icon icon-home"> Tracy-TD Documentation</a>
+        <a href=".." class="icon icon-home"> Tracy-TD Documentation</a>
         <div role="search">
-  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
   </form>
 </div>
@@ -53,49 +53,60 @@
 
 
   <li class="navtree toctree-l1 inactive">
-    <a class="" href="../..">Documentação: Tracy-TD</a>
+    <a class="" href="..">Documentação: Tracy-TD</a>
   </li>
     
       
 
 
   <li class="navtree toctree-l1 inactive">
-    <a class="" href="../../CODE-OF-CONDUCT/">Código de conduta</a>
+    <a class="" href="../CODE-OF-CONDUCT/">Código de conduta</a>
   </li>
     
       
 
 
   <li class="navtree toctree-l1 inactive">
-    <a class="" href="../../CONTRIBUTING/">Contribuindo</a>
+    <a class="" href="../CONTRIBUTING/">Contribuindo</a>
   </li>
     
       
 
 
   <li class="navtree toctree-l1 inactive">
-    <a class="" href="../../TEST-GUIDE/">TEST GUIDE</a>
+    <a class="" href="../TEST-GUIDE/">TEST GUIDE</a>
   </li>
     
       
 
 
   <li class="navtree toctree-l1 inactive">
-    <a class="" href="../../architecture/">Arquitetura de Tracy-TD</a>
+    <a class="" href="../architecture/">Arquitetura de Tracy-TD</a>
   </li>
     
       
 
 
-  <li class="navtree toctree-l1 inactive">
-    <a class="" href="../../dev_process/">Development Process</a>
-  </li>
+  
+    
+    <li class="navtree toctree-l1 page current">
+      <a class="current" href="./">
+        Development Process
+      </a>
+    </li>
+    
+      
+
+
+
+
+  
     
       
 
 
   <li class="navtree toctree-l1 inactive">
-    <a class="" href="../../esboco/">Esboço de regras de Tracy</a>
+    <a class="" href="../esboco/">Esboço de regras de Tracy</a>
   </li>
     
       
@@ -113,34 +124,22 @@
 
 
   <li class="navtree toctree-l2 inactive">
-    <a class="" href="../tracy-api-installation/">Instalação - Tracy API</a>
+    <a class="" href="../config/tracy-api-installation/">Instalação - Tracy API</a>
   </li>
         
           
 
 
   <li class="navtree toctree-l2 inactive">
-    <a class="" href="../tracy-front-instalation/">Instalação - Tracy Front</a>
+    <a class="" href="../config/tracy-front-instalation/">Instalação - Tracy Front</a>
   </li>
         
           
 
 
-  
-    
-    <li class="navtree toctree-l2 page current">
-      <a class="current" href="./">
-        Arquitetura
-          <span class="toctree-expand"></span>
-      </a>
-    </li>
-    
-      
-
-
-
-
-  
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../config/tracy-td_architecture/">Arquitetura</a>
+  </li>
         
       </ul>
     </li>
@@ -155,7 +154,7 @@
       
       <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
         <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="../..">Tracy-TD Documentation</a>
+        <a href="..">Tracy-TD Documentation</a>
       </nav>
 
       
@@ -163,15 +162,11 @@
         <div class="rst-content">
           <div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
-    <li><a href="../..">Docs</a> &raquo;</li>
+    <li><a href="..">Docs</a> &raquo;</li>
     
       
-        
-          <li>Config &raquo;</li>
-        
-      
     
-    <li>Arquitetura</li>
+    <li>Development Process</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -181,7 +176,24 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="arquitetura">Arquitetura</h1>
+                <h1 id="development-process">Development Process</h1>
+<p><img alt="Development Process" src="../devProcess.jpg" /></p>
+<ol>
+<li><strong>Sprint Planning</strong></li>
+<li><strong>Select issue</strong></li>
+<li><strong>New branch</strong></li>
+<li><strong>Think!</strong></li>
+<li><strong>Code!</strong></li>
+<li><strong>Pull Request</strong></li>
+<li><strong>Code / PR review</strong></li>
+<li><strong>Merge!</strong></li>
+</ol>
+<hr />
+<ul>
+<li><strong>Technical Discussion</strong></li>
+<li><strong>Read / update architecture model</strong></li>
+<li><a href="../architecture/">Tracy-TD architecture</a></li>
+</ul>
               
             </div>
           </div>
@@ -189,8 +201,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
+        <a href="../esboco/" class="btn btn-neutral float-right" title="Esboço de regras de Tracy">Next <span class="icon icon-circle-arrow-right"></span></a>
       
-        <a href="../tracy-front-instalation/" class="btn btn-neutral" title="Instalação - Tracy Front"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+        <a href="../architecture/" class="btn btn-neutral" title="Arquitetura de Tracy-TD"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -216,14 +230,16 @@
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../tracy-front-instalation/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../architecture/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
+      
+        <span style="margin-left: 15px"><a href="../esboco/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
-    <script>var base_url = '../..';</script>
-    <script src="../../js/theme.js" defer></script>
-      <script src="../../search/main.js" defer></script>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
 
 </body>
 </html>
