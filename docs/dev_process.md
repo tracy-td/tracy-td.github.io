@@ -15,4 +15,4 @@
 
 * **Technical Discussion**
 * **Read / update architecture model**
-  * [Tracy-TD architecture](architecture.md)
+  * [Tracy-TD architecture](/architecture/architecture.md)

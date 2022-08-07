@@ -1,4 +1,6 @@
 # Arquitetura de Tracy-TD
 
-<div class="mxgraph" style="max-width:100%;border:1px solid transparent;" data-mxgraph="{&quot;highlight&quot;:&quot;#0000ff&quot;,&quot;lightbox&quot;:false,&quot;nav&quot;:true,&quot;resize&quot;:true,&quot;page&quot;:0,&quot;toolbar&quot;:&quot;pages zoom layers tags&quot;,&quot;url&quot;:&quot;https://drive.google.com/uc?id=1srLSj460mJFTyZUbyENGh2y39ZI0QvmI&amp;export=download&quot;}"></div>
-<script type="text/javascript" src="https://viewer.diagrams.net/embed2.js?&fetch=https%3A%2F%2Fdrive.google.com%2Fuc%3Fid%3D1srLSj460mJFTyZUbyENGh2y39ZI0QvmI%26export%3Ddownload"></script>
+
+
+[Current C4Model](https://app.diagrams.net/#Uhttps%3A%2F%2Ftracy-td.github.io%2Farchitecture%2Fc4Model-Tracy-TD.drawio)
+
