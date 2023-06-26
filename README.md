@@ -12,6 +12,6 @@ A documentação estará disponível no endereço: `http://127.0.0.1:8000/`
 
 Após fazer alguma mudança na documentação, você deve executar:
 ```
-%> mkdocs gh-deployok
+%> mkdocs gh-deploy
 
 ```
