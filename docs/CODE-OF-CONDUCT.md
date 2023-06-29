@@ -1,6 +1,8 @@
 # Código de conduta
+
+---
  
-## Nossos votos
+## **Nossos votos**
  
 Com objetivo de proporcionar um ambiente receptivo e confortável,
 nos contribuidores e mantenedores, comprometemos de tornar a nossa
@@ -11,7 +13,7 @@ nível de experiência, educação, status socioeconômico,
 nacionalidade, aparência, raça, religião ou identidade e
 orientação sexual.
  
-## Padrões comportamentais
+## **Padrões comportamentais**
  
 Exemplos de comportamentos que ajudam a manter o ambiente aconchegante:
  
@@ -29,7 +31,7 @@ Exemplos de comportamentos inaceitáveis por parte dos participantes incluem:
 * Publicação de informações privadas de terceiros, como um físico ou endereço eletrônico, sem permissão explícita.
 * Outra conduta que poderia ser razoavelmente considerada inadequada em um ambiente profissional.
  
-## Responsabilidades
+## **Responsabilidades**
  
 Os mantenedores do projeto são responsáveis por esclarecer os padrões de comportamento e devem tomar as medida corretivas,
 adequadas e justas em resposta a quaisquer alterações de comportamento inaceitáveis.

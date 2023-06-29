@@ -1,8 +1,8 @@
 # Documentação: Tracy-TD
+##### Gerência de Dívidas Técnicas Orientada a Negócios
+acesse: [Tracy-TD](http://tracy-td.io)
 
-Tracy-TD: Gerência de Dívidas Técnicas Orientada a Negócios
-
-acesse: http://tracy-td.io
+---
 
 # Contribuindo
 
