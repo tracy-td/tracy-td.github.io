@@ -1,6 +1,51 @@
 site_name: Tracy-TD Documentation
 theme:
-    name: 'rtd-dropdown'
-    prev_next_buttons_location: both
-    titles_only: 'true'
-    locale: pt_BR
+  name: 'material'
+  prev_next_buttons_location: both
+  titles_only: 'true'
+  locale: pt_BR
+  favicon: docs/img/android-icon-48x48.png
+  logo: img/ms-icon-150x150.png
+  repo_url: https://github.com/tracy-td
+  icon:
+    repo: fontawesome/brands/github
+  palette:
+    mode: dark
+    
+  features:
+    - navigation.tabs
+    - navigation.tabs.sticky
+
+extra:
+  favicon: docs/img/favicon-32x32.png
+  google_fonts:
+    - name: Quicksand
+      styles: ['800']
+      subsets: ['latin']
+
+extra:
+  consent:
+    title: Consentimento de Cookies
+    description: >- 
+      Usamos cookies para reconhecer suas visitas repetidas e preferências, 
+      além de medir a eficácia de nossa documentação e se os usuários encontram o que estão procurando. 
+      Com o seu consentimento, você está nos ajudando a tornar nossa documentação melhor.
+    actions:
+      - accept
+      - manage
+
+extra_css:
+  - https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css
+
+extra:
+  go_to_repository:
+    icon: fab fa-github
+    url: https://github.com/tracy-td
+
+extra:
+  social:
+    - icon: fontawesome/brands/github 
+      link: https://github.com/tracy-td  
+   
+
+
