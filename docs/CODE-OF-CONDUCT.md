@@ -1,4 +1,4 @@
-# Código de conduta
+# CÓDIGO DE CONDUTA
 
 ---
  

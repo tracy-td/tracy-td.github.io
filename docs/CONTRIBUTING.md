@@ -1,4 +1,4 @@
-# Contribuindo
+# CONTRIBUINDO
  
 ---
 
@@ -99,6 +99,6 @@ necessárias, abra uma issue e comece a contribuir agora mesmo.
  
 ## **Implementação dos testes**
  
-Para a contribuição de teste, a um [Guia de teste](test-guia.md) para auxiliar na implementação dos mesmos.
+Para a contribuição de teste, a um [Guia de teste](GUIA-TESTE.md) para auxiliar na implementação dos mesmos.
  
 
