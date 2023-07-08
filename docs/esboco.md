@@ -1,13 +1,13 @@
-# Esboço de regras de Tracy
+# ESBOÇO DE REGRAS TRACY
 
 Este documento é um rascunho. As regras migrarão para a documentação oficial em breve.
 
-## Integração com o Jira.
+## **Integração com o Jira.**
 
 ### Ciclo de vida
 
-  * O Jira envia um push para o endpoint de Tracy a cada alteração nas issues do projeto.
-    * TODO: Informar a configuração do endpoint (em que eventos o endpoint deve ser chamado?)
+  - O Jira envia um push para o endpoint de Tracy a cada alteração nas issues do projeto.
+    - TODO: Informar a configuração do endpoint (em que eventos o endpoint deve ser chamado?)
     *  
 
   * issueJira é uma issue no Jira.

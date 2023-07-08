@@ -1,38 +1,28 @@
 # Documentação: Tracy-TD
+#### Gerência de Dívidas Técnicas Orientada a Negócios
+acesse: [Tracy-TD](http://tracy-td.io)
 
-Tracy-TD: Gerência de Dívidas Técnicas Orientada a Negócios
+---
 
-acesse: http://tracy-td.io
+# **Contribuindo:**
 
-# Contribuindo
 
-## Índice:
-- [Iniciando](#iniciando)
-- [Obtendo ajuda](#obtendo-ajuda)
-- [Começando a contribuir](#comeando-a-contribuir)
-- [Iniciando o desnvolvimento](#iniciando-o-desenvolvimento)
-- [Criando uma issue](#criando-issue)
-- [Atribuindo uma issue](#atribuindo-uma-issue)
-- [Contribuindo com o código](#contribuindo-com-o-cdigo)
-- [Contribuindo com a documentação](#contribuindo-com-a-documentao)
-- [Implementação dos testes](#implementao-dos-testes)
-
-## Iniciando
+## **Iniciando**
 
 Aconselhamos que após a leitura desse arquivo, você dê uma olhada nas issues iniciais do projeto, e siga os exemplos de 
 como contribuir com o código.
 
-## Obtendo ajuda
+## **Obtendo ajuda**
 
 A comunidade de contribuições da Tracy-TD possui um canal de comunicação no [Discord](https://discord.gg/AwaqbGPRkd), assim 
 novos integrantes podem tirar suas dúvidas e interagir com outros membros.
 
-## Começando a contribuir
+## **Começando a contribuir**
 
 Para você que é iniciante, sugerimos que pegue uma issue simples para começar a se familiarizar com o projeto. As issues 
 para os iniciantes se encontram neste link (COLOCAR O LINK), essas issues possuem a Labels de "good first issue".
 
-## Iniciando o desenvolvimento
+## **Iniciando o desenvolvimento**
 
 Para iniciar o desenvolvimento é necessário criar uma branch. Existem dois tipos de branches: feature e bugfix:
 
@@ -50,7 +40,7 @@ Criando uma branch via terminal:
 - `git checkout - b \<nome da branch>`
   - Esse comando cria a branch com o nome passado no parâmetro (não utilize os "<>") e ainda troca para branch atual de uso.
 
-## Criando issue
+## **Criando issue**
 
 Se você encontrou algum bug ou quer sugerir alguma funcionalidade, você pode criar uma issue nesse LINK (botar o link)
 
@@ -65,13 +55,13 @@ da nova issue, ao lado direito existe alguns complementos importantes:
 
 Após esses passos a sua issue está pronta para ser criada, clique em "Submite new issue" e receba a nova issue com um "#" seguido de um valor numérico, um identificador para a issue, e este identificador será utilizado no comentário do seu Pull Request para ser feito o link entre a issue e o Pull Request.
 
-## Atribuindo uma issue
+## **Atribuindo uma issue**
 
 Para atribuir uma issue, você precisa acessa a aba de [Issues](https://github.com/rodrigor/tracy-api/issues), ao selecionar uma issue, 
 ela será aberta e poderá receber atribuição(ões) ao clicar em "Assignees", então selecionar quem deverá fazer parte do desenvolvimento dessa issue. 
 Lembrando que em Assigness, não serão as mesmas pessoas que irão revisar o seu [Pull Request](#fazendo-pull-request).
 
-## Fazendo Pull Request
+## **Fazendo Pull Request**
 
 Ao concluir a sua contribuição é hora de fazer o famoso Pull Request, onde ele será revisado pela comunidade e então, 
 se tudo estiver de acordo com as expectativas dos revisadores o Pull Request será aceito. Mas para isso, é preciso seguir alguns passos 

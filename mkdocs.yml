@@ -1,6 +1,110 @@
+# Project information
+# Theme
 site_name: Tracy-TD Documentation
 theme:
-    name: 'rtd-dropdown'
-    prev_next_buttons_location: both
-    titles_only: 'true'
-    locale: pt_BR
+  name: 'material'
+  prev_next_buttons_location: both
+  titles_only: 'true'
+  locale: pt_BR
+  logo: docs/img/ms-icon-144x144.png
+  favicon: docs/img/android-icon-96x96.png
+  logo: img/ms-icon-310x310.png
+  repo_url: https://github.com/tracy-td
+  copyright: Copyright &copy; 2016 - 2023 Tracy-documentação
+
+
+  #Repository
+  icon:
+    repo: fontawesome/brands/github
+
+
+
+  # Options
+  palette:
+    - scheme: default
+      toggle:
+        icon: material/brightness-4
+        name: Switch to dark mode
+      primary: indigo
+      accent: blue
+    - scheme: slate 
+      toggle: 
+        icon: material/brightness-7
+        name: Switch to light mode    
+      primary: blue
+      accent:  black
+    
+  # Options 
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - toc.integrate
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.tabs.link
+    - content.code.annotation
+    - content.code.copy
+
+  # Extensions
+  markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - admonition
+  - pymdownx.arithmatex:
+      generic: true
+  - footnotes
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.mark
+  - attr_list
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg  
+
+#Font
+extra:
+  favicon: docs/img/favicon-32x32.png
+  google_fonts:
+    - name: Quicksand
+      styles: ['800']
+      subsets: ['latin']
+
+
+
+#cookies
+extra:
+  consent:
+    title: Consentimento de Cookies
+    description: >- 
+      Usamos cookies para reconhecer suas visitas repetidas e preferências, 
+      além de medir a eficácia de nossa documentação e se os usuários encontram o que estão procurando. 
+      Com o seu consentimento, você está nos ajudando a tornar nossa documentação melhor.
+    actions:
+      - accept
+      - manage
+
+
+#css/font
+extra_css:
+  - https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css
+
+#Icons
+extra:
+  go_to_repository:
+    icon: fab fa-github
+    url: https://github.com/tracy-td
+
+#Social Footer
+extra:
+  social:
+    - icon: fontawesome/brands/github 
+      link: https://github.com/tracy-td  
+
+
+
+   
+
+
