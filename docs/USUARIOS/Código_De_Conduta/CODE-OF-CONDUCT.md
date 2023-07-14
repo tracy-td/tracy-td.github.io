@@ -1,5 +1,9 @@
 # CÓDIGO DE CONDUTA
 
+Primeiramente, muito obrigado por estar aqui, é um enorme prazer te-lo como colaborador da Tracy-TD. O projeto é uma ferramenta de gerência de dívidas técnicas orientada a negócios.
+Através da ferramenta é possível registrar dívidas, monitorá-las, priorizá-las usando critérios técnicos e critérios ligados ao negócio da organização.
+Este projeto é útil pois permite a gerência de dívidas técnincas.
+///REVIEW/// O projeto possui integrações com outras plataformas, como o gitlab, redmine.... acrescentar as outras....
 ---
  
 ## **Nossos votos**

@@ -37,7 +37,6 @@ theme:
   # Options 
   features:
     - navigation.tabs
-    - navigation.sections
     - toc.integrate
     - navigation.top
     - search.suggest
