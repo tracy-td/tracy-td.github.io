@@ -20,7 +20,8 @@ O processo de desenvolvimento do projeto Tracy-TD segue uma abordagem iterativa 
 8. Merge!: Após a revisão e aprovação do Pull Request, as alterações são mescladas à branch principal do projeto. Esse processo garante a incorporação das alterações e a atualização do código-fonte do projeto como um todo.
 
 ---
-# Discussões Técnicas
+
+## **Discussões Técnicas**
 
 Durante todo o processo de desenvolvimento, a equipe também realiza discussões técnicas e atualizações do modelo de arquitetura, buscando manter uma visão clara e atualizada da estrutura e componentes do Tracy-TD.
 
@@ -28,6 +29,7 @@ Esse processo iterativo permite uma evolução contínua do projeto, promovendo 
 
 ---
 
+## **Diagrama**
 
 O diagrama "Development Process" ilustra uma visão geral do processo de desenvolvimento adotado no projeto Tracy-TD. O processo é composto por etapas bem definidas, desde o planejamento das tarefas até a revisão e mesclagem do código. Cada etapa desempenha um papel importante no fluxo de trabalho da equipe, garantindo um desenvolvimento eficiente e de qualidade. Através desse processo, a equipe colabora de forma estruturada e organizada, resultando em entregas consistentes e alinhadas com as metas e objetivos do projeto Tracy-TD.
 
@@ -59,4 +61,4 @@ Throughout the development process, the team also engages in technical discussio
 
 This iterative process allows for continuous project evolution, promoting the delivery of value to users and the constant improvement of software quality.
 
-The "Development Process" diagram provides an overview of the development process adopted in the Tracy-TD project. The process consists of well-defined steps, from task planning to code review and merging. Each step plays an important role in the team's workflow, ensuring efficient and quality development. Through this process, the team collaborates in a structured and organized manner, resulting in consistent deliveries aligned with the goals and objectives of the Tracy-TD project.-!>
+The "Development Process" diagram provides an overview of the development process adopted in the Tracy-TD project. The process consists of well-defined steps, from task planning to code review and merging. Each step plays an important role in the team's workflow, ensuring efficient and quality development. Through this process, the team collaborates in a structured and organized manner, resulting in consistent deliveries aligned with the goals and objectives of the Tracy-TD project. -->
