@@ -1,6 +1,9 @@
 # Project information
-# Theme
 site_name: Tracy-TD Documentation
+site_url: https://tracy-td.github.io
+site_description: Documentação da Tracy-TD
+site_author: Tracy-TD Team
+
 theme:
   name: 'material'
   prev_next_buttons_location: both
@@ -12,12 +15,9 @@ theme:
   repo_url: https://github.com/tracy-td
   copyright: Copyright &copy; 2016 - 2023 Tracy-documentação
 
-
   #Repository
   icon:
     repo: fontawesome/brands/github
-
-
 
   # Options
   palette:
@@ -47,21 +47,21 @@ theme:
 
   # Extensions
   markdown_extensions:
-  - pymdownx.highlight:
-      anchor_linenums: true
-  - pymdownx.inlinehilite
-  - pymdownx.snippets
-  - admonition
-  - pymdownx.arithmatex:
-      generic: true
-  - footnotes
-  - pymdownx.details
-  - pymdownx.superfences
-  - pymdownx.mark
-  - attr_list
-  - pymdownx.emoji:
-      emoji_index: !!python/name:materialx.emoji.twemoji
-      emoji_generator: !!python/name:materialx.emoji.to_svg  
+    - pymdownx.highlight:
+        anchor_linenums: true
+    - pymdownx.inlinehilite
+    - pymdownx.snippets
+    - admonition
+    - pymdownx.arithmatex:
+        generic: true
+    - footnotes
+    - pymdownx.details
+    - pymdownx.superfences
+    - pymdownx.mark
+    - attr_list
+    - pymdownx.emoji:
+        emoji_index: !!python/name:materialx.emoji.twemoji
+        emoji_generator: !!python/name:materialx.emoji.to_svg  
 
 #Font
 extra:
@@ -71,20 +71,16 @@ extra:
       styles: ['800']
       subsets: ['latin']
 
-
-
 #cookies
-extra:
-  consent:
-    title: Consentimento de Cookies
-    description: >- 
-      Usamos cookies para reconhecer suas visitas repetidas e preferências, 
-      além de medir a eficácia de nossa documentação e se os usuários encontram o que estão procurando. 
-      Com o seu consentimento, você está nos ajudando a tornar nossa documentação melhor.
-    actions:
-      - accept
-      - manage
-
+consent:
+  title: Consentimento de Cookies
+  description: >- 
+    Usamos cookies para reconhecer suas visitas repetidas e preferências, 
+    além de medir a eficácia de nossa documentação e se os usuários encontram o que estão procurando. 
+    Com o seu consentimento, você está nos ajudando a tornar nossa documentação melhor.
+  actions:
+    - accept
+    - manage
 
 #css/font
 extra_css:
@@ -100,10 +96,7 @@ extra:
 extra:
   social:
     - icon: fontawesome/brands/github 
-      link: https://github.com/tracy-td  
+      link: https://github.com/tracy-td
 
-
-
-   
-
-
+# Definir página inicial
+site_index: http://127.0.0.1:8000/DESENVOLVEDORES/Arquitetura/Arquitetura-Tracy-TD/
