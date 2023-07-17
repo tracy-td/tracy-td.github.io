@@ -3,8 +3,8 @@
 Inicialmente, expressamos nossa sincera gratidão pela sua presença neste ambiente, onde nos alegra imensamente tê-lo como colaborador da Tracy-TD. O projeto em questão consiste em uma plataforma de gestão de débitos técnicos voltada para o contexto empresarial.
 
 Através desta plataforma, é possível realizar o registro minucioso das dívidas existentes, monitorá-las de forma contínua e, adicionalmente, atribuir prioridades baseadas em critérios tanto técnicos quanto alinhados aos objetivos de negócio da organização.
-Este projeto é útil pois permite a gerência de dívidas técnincas.
-///REVIEW/// O projeto possui integrações com outras plataformas, como o gitlab, redmine.... acrescentar as outras....
+
+O projeto possui integrações com outras plataformas, como o Gitlab, Redmine e Jira.
 ---
  
 ## **Nossos votos**
