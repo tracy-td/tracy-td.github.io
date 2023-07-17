@@ -1,18 +1,18 @@
-#Testes unitários com mock para as classes de serviços
+# Testes unitários com Mock para as classes de serviços.
 
 Serão demonstradas neste guia de teste, as 4 funções de um CRUD e exceção, para que assim, seja possível que se tenha
 uma ideia básica de como continuar com a implementação de testes.
 
-Um teste é composto por 3 fases, preparação, execução e validação.
-- Preparação: nessa etapa é criado todos os argumentos necessários e configurações para que o teste possa representar o mais próximo do cenário real;
-- Execução: aqui onde se utiliza os argumentos produzidos na preparação e executamos o metodo do serviço a qual queremos testar;
-- Validação: a fase mais importante de um teste, onde ocorre todas as verificações da execução do teste e se ocorreu como esperado;
+Um teste é composto por 3 fases: Preparação, Execução e Validação.
 
-Para testarmos um serviço vamos começar criando a classe de teste, caso a classe de teste não exista.
-A nomenclatura da classe de teste deve seguir um padrão "{nome da classe do serviço}" + "Test",
-por exemplo: "TechnicalDebtServiceTest", o local em que esse arquivo deve está é no path do
-projeto em "src/test/java/org/{nome_do_projeto}" dentro de um diretório que o serviço faça parte, para o exemplo em questão
-o diretório é "technicalDebt", resultando no seguinte path: "src/test/java/org/tracy/technicaldebt", logo após adicionamos a anotação @Tag("Service") e
+ * Preparação: nessa etapa é criado todos os argumentos necessários e configurações para que o teste possa representar o mais próximo do cenário real;
+* Execução: aqui onde se utiliza os argumentos produzidos na preparação e executamos o metodo do serviço a qual queremos testar;
+* Validação: a fase mais importante de um teste, onde ocorre todas as verificações da execução do teste e se ocorreu como esperado;
+
+Para testarmos um serviço, vamos começar criando a classe de teste, caso a classe de teste não exista.
+A nomenclatura da classe de teste deve seguir um padrão <mark>"{nome da classe do serviço}" + "Test"</mark>,
+por exemplo: <mark>"TechnicalDebtServiceTest"</mark>.  
+O local em que esse arquivo deve está é no path do projeto em <mark>"src/test/java/org/{nome_do_projeto}"</mark> dentro de um diretório que o serviço faça parte, para o exemplo em questão o diretório é "technicalDebt", resultando no seguinte path: "src/test/java/org/tracy/technicaldebt", logo após adicionamos a anotação @Tag("Service") e
 @ExtendWith(MockitoExtension.class) em cima do "public class".
 
 ```
@@ -22,7 +22,7 @@ public class TechnicalDebtServiceTest {
 
 }
 ```
-Agora precisamos pegar os atributos da classe de serviço para a qual os testes devem ser feitos e passar como atributos da classe teste, os atributos que forem outros serviços e repositórios, devem receber a anotação @Mock.
+Agora precisamos pegar os atributos da classe de serviço para a qual os testes devem ser feitos e passar como atributos da classe teste, os atributos que forem outros serviços e repositórios, devem receber a anotação <mark>@Mock.</mark>
 
 ```
 @Tag("Service")
@@ -43,8 +43,7 @@ public class TechnicalDebtServiceTest {
 ```
 
 Após todos os atributos necessários para a classe de serviço estiverem "mockados" deve ser injetado todos os mocks em uma
-instância do serviço, isso pode ser feito através da anotação @InjectMocks ou através de um método de construção anotado por um @Beforeach, damos
-preferência ao @InjectMocks.
+instância do serviço, isso pode ser feito através da anotação <mark>@InjectMocks</mark> ou através de um método de construção anotado por um <mark>@Beforeach</mark>, damos preferência ao <mark>@InjectMocks.</mark>
 
 ```
 @Tag("Service")
@@ -71,9 +70,10 @@ public class TechnicalDebtServiceTest {
 }
 ```
 
-Com todos as dependências injetadas no serviço para ser testado, partimos para criação do teste unitário, na mesma classe,
-Iniciamos o método de teste com uma nomenclatura a qual deve de forma mais clara possível identificar a validação do teste.
-Todos os testes devem ter como retorno o tipo void, e uma anotação obrigatória @Test e uma opcional @DisplayName (pode haver outras anotações opcionais), a anotação @Test marca o método como teste, fazendo com que o testrunner execute os métodos anotados, além de poder executar cada um isoladamente.
+Com todos as dependências injetadas no serviço para ser testado, partimos para criação do teste unitário, na mesma classe.
+Iniciamos o método de teste com uma nomenclatura a qual deve de forma mais clara possível identificar a validação do teste.  
+
+Todos os testes devem ter como retorno o tipo void, e uma anotação obrigatória <mark>@Test</mark> e uma opcional @DisplayName (pode haver outras anotações opcionais), a anotação @Test marca o método como teste, fazendo com que o testrunner execute os métodos anotados, além de poder executar cada um isoladamente.
 Já o @DisplayName dá uma título ao teste, para que na interface seja visto com mais detalhes o que o teste se propõem a fazer,
 nesta anotação você pode escrever em qualquer língua, desde que fique claro e compatível.
 
@@ -119,7 +119,7 @@ Para o teste em questão é necessário mockar outros comportamentos de outras c
    }
 ```
 
-Na primeira etapa criamos os objetos e configuramos os retornos mocks dos atributos anotados com @Mock através do
+Na primeira etapa criamos os objetos e configuramos os retornos mocks dos atributos anotados com <mark>@Mock</mark> através do
 método "when()" do Mockito seguido de um ".return()" com o objeto simulado no retorno real do método da classe mockada, mas primeiro, precisamos construir esses
 retornos, e para facilitar a construção de tais objetos utilizamos os métodos estáticos, builders, para poupar tempo e linhas de código.
 Na linha 148 o comportamento do repositório é simulado, utilizando o "when()", note que é preciso especificar qual método a classe mockada está chamando e
@@ -167,12 +167,11 @@ apenas chamamos o método a qual queremos testar e passamos seus devidos parâme
 
 ```
 Depois da preparação e execução, chegou a vez da validação dos resultados, em alguns casos, é preciso saber como o objeto chegou ao
-repositório/serviço, momento que o objeto é passado por parâmetro do método, e para isso é necessário a criação de objetos do tipo ArgumentCaptor, ele
-é capaz de capturar os objetos nos parâmetros e é usado em conjunto com o método "verify()", o método verify,
-verifica as ocorrências das chamadas aos métodos da classe que foram utilizados durante a execução do teste, que por padrão é "times(1)",
-uma ocorrência do método da instância, o times é o segundo parâmetro do método verify(), em seguida utilizasse o "." mas o método que deseja verificar a
-ocorrência, que para esse exemplo vamos focar no "saveAndFlush()", linha 158, que é passado como parâmetro um ArgumentCaptor do tipo TechnicalDebt,
-que é justamente a classe que chega para ser salva no repositório. Com o método "capture()" do ArgumentCaptor para capturar o valor e depois utilizamos o
+repositório/serviço, momento que o objeto é passado por parâmetro do método, e para isso é necessário a criação de objetos do tipo <mark>ArgumentCaptor</mark>, ele é capaz de capturar os objetos nos parâmetros e é usado em conjunto com o método "verify()". 
+
+ O método verify verifica as ocorrências das chamadas aos métodos da classe que foram utilizados durante a execução do teste, que por padrão é "times(1)", uma ocorrência do método da instância, o times é o segundo parâmetro do método verify(), em seguida utiliza-se o "." mas o método que deseja verificar a ocorrência, que para esse exemplo vamos focar no "saveAndFlush()", linha 158, que é passado como parâmetro um ArgumentCaptor do tipo <mark>TechnicalDebt</mark>, que é justamente a classe que chega para ser salva no repositório.  
+ 
+  Com o método "capture()" do ArgumentCaptor para capturar o valor e depois utilizamos o
 método "getValue()" para pegar o valor capturado e armazenar em uma variável, essa variável será utilizado para verificação dos campos.
 
 ```
@@ -246,7 +245,7 @@ ele garante que para aquele fluxo o comportamento seja o esperado.
 ```
 
 
-Builders são os métodos que fazem instância da classe e que você pode alterar os campos enquanto chama o método, como na linha 142 onde o campo "id" está sendo setado com o valor 1L.
+<mark>Builders</mark> são os métodos que fazem instância da classe e que você pode alterar os campos enquanto chama o método, como na linha 142 onde o campo "id" está sendo setado com o valor 1L.
 Os builders ficam no path referente aos testes, em: "src/test/java/org/tracy/builders". Builders podem possuir outros builders para facilitar a sua construção, mas cuidado para não gerar recursão entre eles.
 
 ```
