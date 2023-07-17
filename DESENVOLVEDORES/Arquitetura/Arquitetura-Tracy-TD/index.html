@@ -10,19 +10,21 @@
       
       
       
-      <link rel="icon" href="/docs/img/android-icon-96x96.png">
+        <link rel="next" href="../../Contribui%C3%A7%C3%A3o/Gerenciamento-de-contribui%C3%A7%C3%B5es/">
+      
+      <link rel="icon" href="../../../docs/img/android-icon-96x96.png">
       <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.17">
     
     
       
-        <title>Tracy-TD Documentation</title>
+        <title>Arquitetura de Tracy-TD - Tracy-TD Documentation</title>
       
     
     
-      <link rel="stylesheet" href="/assets/stylesheets/main.26e3688c.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.26e3688c.min.css">
       
         
-        <link rel="stylesheet" href="/assets/stylesheets/palette.ecc896b0.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ecc896b0.min.css">
       
       
 
@@ -40,7 +42,7 @@
     
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     
-    <script>__md_scope=new URL("/",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -68,6 +70,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#arquitetura-de-tracy-td" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -78,9 +85,9 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="/." title="Tracy-TD Documentation" class="md-header__button md-logo" aria-label="Tracy-TD Documentation" data-md-component="logo">
+    <a href="../../.." title="Tracy-TD Documentation" class="md-header__button md-logo" aria-label="Tracy-TD Documentation" data-md-component="logo">
       
-  <img src="/img/ms-icon-310x310.png" alt="logo">
+  <img src="../../../img/ms-icon-310x310.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -96,7 +103,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              
+              Arquitetura de Tracy-TD
             
           </span>
         </div>
@@ -184,6 +191,8 @@
         
   
   
+    
+  
 
 
   
@@ -195,7 +204,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="/DESENVOLVEDORES/Arquitetura/Arquitetura-Tracy-TD/" class="md-tabs__link">
+      <a href="./" class="md-tabs__link md-tabs__link--active">
         DESENVOLVEDORES
       </a>
     </li>
@@ -213,7 +222,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="/EMPRESAS/Empresas_Parceiras/" class="md-tabs__link">
+      <a href="../../../EMPRESAS/Empresas_Parceiras/" class="md-tabs__link">
         EMPRESAS
       </a>
     </li>
@@ -234,7 +243,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="/USUARIOS/C%C3%B3digo_De_Conduta/CODE-OF-CONDUCT/" class="md-tabs__link">
+      <a href="../../../USUARIOS/C%C3%B3digo_De_Conduta/CODE-OF-CONDUCT/" class="md-tabs__link">
         USUARIOS
       </a>
     </li>
@@ -266,9 +275,9 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="/." title="Tracy-TD Documentation" class="md-nav__button md-logo" aria-label="Tracy-TD Documentation" data-md-component="logo">
+    <a href="../../.." title="Tracy-TD Documentation" class="md-nav__button md-logo" aria-label="Tracy-TD Documentation" data-md-component="logo">
       
-  <img src="/img/ms-icon-310x310.png" alt="logo">
+  <img src="../../../img/ms-icon-310x310.png" alt="logo">
 
     </a>
     Tracy-TD Documentation
@@ -282,14 +291,16 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" checked>
       
       
       
@@ -298,7 +309,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_1">
           <span class="md-nav__icon md-icon"></span>
           DESENVOLVEDORES
@@ -309,14 +320,16 @@
               
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_1" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_1" checked>
       
       
       
@@ -325,7 +338,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_1_label" aria-expanded="false">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_1_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_1_1">
           <span class="md-nav__icon md-icon"></span>
           Arquitetura
@@ -336,11 +349,21 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="/DESENVOLVEDORES/Arquitetura/Arquitetura-Tracy-TD/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Arquitetura de Tracy-TD
       </a>
+      
     </li>
   
 
@@ -386,7 +409,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/DESENVOLVEDORES/Contribui%C3%A7%C3%A3o/Gerenciamento-de-contribui%C3%A7%C3%B5es/" class="md-nav__link">
+      <a href="../../Contribui%C3%A7%C3%A3o/Gerenciamento-de-contribui%C3%A7%C3%B5es/" class="md-nav__link">
         Gerenciamento de contribuições
       </a>
     </li>
@@ -434,7 +457,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/DESENVOLVEDORES/Instala%C3%A7%C3%A3o/Tracy-api-Instala%C3%A7%C3%A3o/" class="md-nav__link">
+      <a href="../../Instala%C3%A7%C3%A3o/Tracy-api-Instala%C3%A7%C3%A3o/" class="md-nav__link">
         Instalação - Tracy API
       </a>
     </li>
@@ -448,7 +471,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/DESENVOLVEDORES/Instala%C3%A7%C3%A3o/Tracy-front-Instala%C3%A7%C3%A3o/" class="md-nav__link">
+      <a href="../../Instala%C3%A7%C3%A3o/Tracy-front-Instala%C3%A7%C3%A3o/" class="md-nav__link">
         Instalação - Tracy Front
       </a>
     </li>
@@ -496,7 +519,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/DESENVOLVEDORES/Processo_de_Desenvolvimento/Processo-De-Desenvolvimento/" class="md-nav__link">
+      <a href="../../Processo_de_Desenvolvimento/Processo-De-Desenvolvimento/" class="md-nav__link">
         Processo de Desenvolvimento
       </a>
     </li>
@@ -544,7 +567,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/DESENVOLVEDORES/Testes/Guia-Teste/" class="md-nav__link">
+      <a href="../../Testes/Guia-Teste/" class="md-nav__link">
         Testes unitários com Mock para as classes de serviços.
       </a>
     </li>
@@ -600,7 +623,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/EMPRESAS/Empresas_Parceiras/" class="md-nav__link">
+      <a href="../../../EMPRESAS/Empresas_Parceiras/" class="md-nav__link">
         Empresas Parceiras
       </a>
     </li>
@@ -614,7 +637,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/EMPRESAS/Valor_Tracy/" class="md-nav__link">
+      <a href="../../../EMPRESAS/Valor_Tracy/" class="md-nav__link">
         Como a tracy pode acrescentar valor na sua empresa ?
       </a>
     </li>
@@ -690,7 +713,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/USUARIOS/C%C3%B3digo_De_Conduta/CODE-OF-CONDUCT/" class="md-nav__link">
+      <a href="../../../USUARIOS/C%C3%B3digo_De_Conduta/CODE-OF-CONDUCT/" class="md-nav__link">
         CÓDIGO DE CONDUTA
       </a>
     </li>
@@ -738,7 +761,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/USUARIOS/Prioriza%C3%A7%C3%A3o/Prioriza%C3%A7%C3%A3o%20Orientada%20a%20Neg%C3%B3cios/" class="md-nav__link">
+      <a href="../../../USUARIOS/Prioriza%C3%A7%C3%A3o/Prioriza%C3%A7%C3%A3o%20Orientada%20a%20Neg%C3%B3cios/" class="md-nav__link">
         Priorização Orientada a Negócios de Dívidas Técnicas
       </a>
     </li>
@@ -771,8 +794,23 @@
             <div class="md-content" data-md-component="content">
               <article class="md-content__inner md-typeset">
                 
-  <h1>404 - Not found</h1>
+                  
 
+
+<h1 id="arquitetura-de-tracy-td">Arquitetura de Tracy-TD</h1>
+<p>A arquitetura do Tracy-TD é baseada no C4 Model, uma abordagem para descrever a arquitetura de software de forma clara e concisa. Através do C4 Model, é possível compreender a estrutura, os componentes e as interações do Tracy-TD.</p>
+<p>Para visualizar a arquitetura atual do Tracy-TD, você pode acessar o diagrama C4 Model por meio do seguinte link:</p>
+<ul>
+<li><a href="https://app.diagrams.net/#Uhttps%3A%2F%2Ftracy-td.github.io%2Farchitecture%2Fc4Model-Tracy-TD.drawio">Current C4Model</a></li>
+</ul>
+<p>Nesse diagrama, você encontrará uma representação visual dos elementos arquiteturais do Tracy-TD, incluindo suas camadas, componentes, relacionamentos e interfaces. Isso permitirá que você tenha uma compreensão mais clara da estrutura do sistema e como seus diferentes elementos se relacionam.</p>
+<p>Explorar a arquitetura do Tracy-TD por meio do C4 Model é uma excelente maneira de obter insights sobre o funcionamento interno do sistema e como as diferentes partes se encaixam. Isso pode ser útil para desenvolvedores, arquitetos de software e qualquer pessoa interessada em entender melhor a arquitetura do Tracy-TD.</p>
+
+
+
+
+
+                
               </article>
             </div>
           
@@ -826,10 +864,10 @@
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "/", "features": ["navigation.tabs", "toc.integrate", "navigation.top", "search.suggest", "search.highlight", "content.tabs.link", "content.code.annotation", "content.code.copy"], "search": "/assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "toc.integrate", "navigation.top", "search.suggest", "search.highlight", "content.tabs.link", "content.code.annotation", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="/assets/javascripts/bundle.b425cdc4.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.b425cdc4.min.js"></script>
       
     
   </body>
