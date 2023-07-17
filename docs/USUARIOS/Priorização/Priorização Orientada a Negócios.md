@@ -26,7 +26,7 @@ A compreensão desses conceitos também envolve os usuários. O sistema (no caso
 
 ## **Priorização Orientada a Negócios:**
 
-Compreendendo esses conceitos, podemos estabelecer uma política de priorização para a Tracy-td. Essa política leva em consideração os valores, a utilização e o estado da funcionalidade. Vamos utilizar um exemplo para ilustrar melhor: uma dívida técnica que possui o value Core-Business (uma funcionalidade essencial para o fluxo principal do produto), uma usage High (alta taxa de utilização) e está no estado operational (em operação/produção). Essa dívida técnica receberia a prioridade mais alta, classificada como 1. Da mesma forma, outras dívidas técnicas seriam classificadas com valores de 1 a 10, levando em conta seus atributos. É importante ressaltar que a classificação dos valores é definida pelas empresas e esse é apenas um exemplo para facilitar o entendimento.
+Compreendendo esses conceitos, podemos estabelecer uma política de priorização para a Tracy-TD. Essa política leva em consideração os valores, a utilização e o estado da funcionalidade. Vamos utilizar um exemplo para ilustrar melhor: uma dívida técnica que possui o value Core-Business (uma funcionalidade essencial para o fluxo principal do produto), uma usage High (alta taxa de utilização) e está no estado operational (em operação/produção). Essa dívida técnica receberia a prioridade mais alta, classificada como 1. Da mesma forma, outras dívidas técnicas seriam classificadas com valores de 1 a 10, levando em conta seus atributos. É importante ressaltar que a classificação dos valores é definida pelas empresas e esse é apenas um exemplo para facilitar o entendimento.
 
 ---
 

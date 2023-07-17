@@ -188,7 +188,7 @@ método "getValue()" para pegar o valor capturado e armazenar em uma variável, 
 ```
 
 A verificação dos campos é feita através dos assertions, aqui se compara os valores atuais dos valores esperados,
-dessa maneira validando campo a campo, importante que todos os campos sejam validados, pois, durante o fluxo é possível que
+dessa maneira validando campo a campo. É importante que todos os campos sejam validados, pois, durante o fluxo é possível que
 algum valor seja alterado, e essa alteração possa ser parte do fluxo ou um bug gerado, é aqui que está a importância do teste unitário,
 ele garante que para aquele fluxo o comportamento seja o esperado.
 
