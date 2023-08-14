@@ -13,9 +13,9 @@ Para construir e executar a aplicação, você precisa dos seguintes requisitos:
 
 - Clone o repositório tracy-front da branch tracy_ees. (Em caso de problemas usando a funcionalidade do git bash, você pode usar o CMD para fazer isso)
 - No arquivo environment.ts altere a api de "api: 'http://localhost:8080'" para "api: 'http://localhost:9090'"
-- Abra o projeto com o Vs Code e execute o comando npm install. Isso vai levar alguns minutos para ser concluído.
-- Após a conclusão, execute o comando ng s. Isso vai demorar um pouco mais.
-- Em seguida, execute o comando npm start, que irá executar a aplicação.
+- Abra o projeto com o Vs Code e execute o comando `npm install`. Isso vai levar alguns minutos para ser concluído.
+- Após a conclusão, execute o comando `ng s`. Isso vai demorar um pouco mais.
+- Em seguida, execute o comando `npm start`, que irá executar a aplicação.
 - Quando finalizar, abra seu navegador e acesse "localhost:4200".
 - Insira o login "admin@tracytd.org" e a senha "rootadmin".
 - Pronto!
