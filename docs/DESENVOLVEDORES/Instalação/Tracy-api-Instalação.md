@@ -25,38 +25,23 @@ Para construir e executar a aplicação, você precisa dos seguintes requisitos:
 ## **Primeiro Passo: Backend**
 ---
 
-- Clone os repositórios tracy-api e traExecute mvn clean install
-- Execute `mvn clean install`
-- Crie o banco de dados no  Postgres e nomeie-o como tracytd
-- Abra o código da API Rest no Intellij. Vá para src > main > resources e crie um arquivo chamado "application-dev.yml".
+- Clone os repositórios tracy-api da branch tracy_ees.
+- Crie o banco de dados no Postgres e nomeie-o como tracytd.
+- Vá para src > main > resources e crie um arquivo chamado "application-dev.yml".
 - Cole o seguinte código dentro do arquivo:
 
-
         spring:
-        datasource:
-        url: jdbc:postgresql://localhost:5432/tracytd
-        username: postgres
-        password: tuasenha (substituir pela senha do postgres)
+            datasource:
+                url: jdbc:postgresql://localhost:5432/tracytd username: postgres
+                password: tuasenha (substituir pela senha do
+                postgres)
 
-- Executar o comando `mvn clean install` no terminal do intellij.
-- No Intellij, vá para o menu "Add Configuration" e crie uma nova configuração clicando no sinal "+" no canto superior esquerdo. Escolha a categoria "Application".
-- No menu seguinte, complete os campos com essas instruções:
-
-        name: "tracy-api"
-
-        main class: procure a classe "tracy application"
-
-     
-- No campo "Modify options", escolha a opção "Add vm options", e no campo com o mesmo nome, cole o seguinte código:
-
-        -Dspring.profiles.active=dev
-
--Apos isso, no campo Environment variables cole o seguinte código : 
-
-        env.TRACY_API_VERSION=SNAPSHOT
-
-- Depois disso, clique em aplicar e ok. Se o campo "Add configuration" não mudar automaticamente, mude ele para a nova configuração.
-- Rode o projeto!
+- No arquivo docker-compose.yml, troque as senhas pela do seu postgres.
+- Crie um arquivo .env e digite nele "TRACY_API_VERSION="1.0.0"".
+- No arquivo tracyApplication.java substituir o código "env.TRACY_API_VERSION" por "TRACY_API_VERSION".
+- Executar o comando `mvn clean install` no terminal da sua IDE.
+- Quando terminar, rodar `mvn -N io.takari:maven:wrapper` no terminal.
+- Por fim,`docker-compose up --build` , que fará a api funcionar.
 &nbsp;
 
 
@@ -81,12 +66,9 @@ To build and run the application, you need the following requirements:
 
 Make sure you have installed all the requirements, and then follow the steps below.
 First Step: Backend
+
 Clone the tracy-api and tracy-text-processor repositories. (In case of problems using the git bash function, you can use the cmd to do this)
-
-Run mvn clean install
-
 Create the Postgres database and name it tracytd
-
 Open the API Rest code in Intellij. Go to src > main > resources and create a file named application-dev.yml.
 
 Paste the following code inside the file:
@@ -98,24 +80,14 @@ Copy code
       url: jdbc:postgresql://localhost:5432/tracytd
       username: postgres
       password: yourpassword (replace with the password of the postgres)
-Execute the command mvn clean install in the Intellij terminal.
+      
+In the file docker-compose.yml, change the passwords for your own
+Create a file .env and write "TRACY_API_VERSION="1.0.0"" on it
+In the file tracyApplication.java change the piece of code "env.TRACY_API_VERSION" fora "TRACY_API_VERSION".
+Execute the command mvn clean install in your IDE's terminal.
+When its finished, run mvn -N io.takari:maven:wrapper in the terminal
+At last, docker-compose up --build, which will make the api work
 
-In Intellij, go to the "Add Configuration" menu and create a new configuration by clicking the "+" sign in the top left corner. Choose the "Application" category.
-
-In the next menu, complete the fields with these instructions:
-
-arduino
-Copy code
-  name: "tracy-api"
-
-  main class: find the "tracy application" class
-In the "Modify options" field, choose the "Add vm options" option, and in the field with the same name, paste the following code:
-
-Copy code
-  -Dspring.profiles.active=dev
-After that, click apply and ok. If the "Add configuration" field doesn't change automatically, change it to the new configuration.
-
-Run the project!
  
 
 How to get help?
