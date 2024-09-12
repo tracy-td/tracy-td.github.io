@@ -11,11 +11,13 @@ Para construir e executar a aplicação, você precisa dos seguintes requisitos:
 
 ## **Tutorial de instalação**
 
-- Clone o repositório tracy-front. (Em caso de problemas usando a funcionalidade do git bash, você pode usar o CMD para fazer isso)
-- Abra o projeto com o Vs Code e execute o comando npm i. Isso vai levar alguns minutos para ser concluído.
-- Após a conclusão, execute o comando ng s. Isso vai demorar um pouco mais.
+- Clone o repositório tracy-front da branch tracy_ees. (Em caso de problemas usando a funcionalidade do git bash, você pode usar o CMD para fazer isso)
+- No arquivo environment.ts altere a api de "api: 'http://localhost:8080'" para "api: 'http://localhost:9090'"
+- Abra o projeto com o Vs Code e execute o comando `npm install`. Isso vai levar alguns minutos para ser concluído.
+- Após a conclusão, execute o comando `ng s`. Isso vai demorar um pouco mais.
+- Em seguida, execute o comando `npm start`, que irá executar a aplicação.
 - Quando finalizar, abra seu navegador e acesse "localhost:4200".
-- Insira o login "root@tracy-td.io" e a senha "rootadmin".
+- Insira o login "admin@tracytd.org" e a senha "rootadmin".
 - Pronto!
   
 
@@ -38,11 +40,13 @@ To build and run the application, you need the following requirements:
 Installation Tutorial
  
 
-Clone the tracy-front repository. (In case of problems using the git bash function, you can use CMD to do this)
-Open the project with Vs Code and execute the command npm i. This will take a few minutes to complete.
+Clone the tracy-front repository from the tracy_ees branch. (In case of problems using the git bash function, you can use CMD to do this)
+In the enviroment.ts file, change the api from "api: 'http://localhost:8080'", to "api: 'http://localhost:9090'"
+Open the project with Vs Code and execute the command npm install. This will take a few minutes to complete.
 After the completion, execute the command ng s. This will take a little longer.
+After that, execute the command npm start, which will start the application
 Once it's done, open your browser and go to "localhost:4200".
-Enter the login "root@tracy-td.io" and the password "rootadmin".
+Enter the login "admin@tracytd.org" and the password "rootadmin".
 Done!
 How to get help?
 You should access the Discord channel where you will have access to the developers working on the project, as well as other people who are using Tracy in their companies.-->
