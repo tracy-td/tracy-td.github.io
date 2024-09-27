@@ -1,4 +1,4 @@
-# Priorização Orientada a Negócios de Dívidas Técnicas
+# Priorização de Dívidas Técnicas Orientada a Negócios
 
 ## **Technical Debt, o que é?** 
 
