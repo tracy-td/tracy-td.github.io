@@ -14,6 +14,7 @@ theme:
   logo: img/ms-icon-310x310.png
   repo_url: https://github.com/tracy-td
   copyright: Copyright &copy; 2016 - 2023 Tracy-documentação
+  homepage_url: /
 
   #Repository
   icon:
@@ -98,5 +99,32 @@ extra:
     - icon: fontawesome/brands/github 
       link: https://github.com/tracy-td
 
-# Definir página inicial
-site_index: http://127.0.0.1:8000/DESENVOLVEDORES/Arquitetura/Arquitetura-Tracy-TD/
+nav:
+  - DESENVOLVEDORES:
+      - Arquitetura:
+          - "Arquitetura Tracy-TD": DESENVOLVEDORES/Arquitetura/Arquitetura-Tracy-TD.md
+      - Contribuição:
+          - "Gerenciamento de Contribuições": DESENVOLVEDORES/Contribuição/Gerenciamento-de-contribuições.md
+      - Instalação:
+          - "Tracy API Instalação": DESENVOLVEDORES/Instalação/Tracy-api-Instalação.md
+          - "Tracy Front Instalação": DESENVOLVEDORES/Instalação/Tracy-front-Instalação.md
+      - Processo de Desenvolvimento:
+          - "Processo de Desenvolvimento": DESENVOLVEDORES/Processo_de_Desenvolvimento/Processo-De-Desenvolvimento.md
+      - Testes:
+           - "Guia Teste": DESENVOLVEDORES/Testes/Guia-Teste.md
+
+  - EMPRESAS:
+      - Empresas Parceiras: 
+        - EMPRESAS/Empresas_Parceiras.md
+      - O Que Podemos Oferecer?: 
+        - EMPRESAS/Valor_Tracy.md
+
+  - USUÁRIOS:
+    - Código de Conduta: 
+      - USUARIOS/Código_De_Conduta/CODE-OF-CONDUCT.md  
+    - Configurar Jira: 
+      - USUARIOS/Configurar_Jira/Configurar Jira.md
+    - Technical Debt: 
+      - USUARIOS/Technical_Debt/Technical Debt.md
+
+

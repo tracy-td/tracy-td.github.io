@@ -1,8 +1,8 @@
-# Como a tracy pode acrescentar valor na sua empresa ?
+# Como a tracy pode acrescentar valor na sua empresa?
 
 A Tracy-TD é muito mais do que apenas uma plataforma de gestão de débitos técnicos. Ela oferece inúmeras vantagens e benefícios que podem agregar valor significativo à sua empresa, otimizando o desenvolvimento de software e aprimorando a eficiência operacional. Aqui estão algumas maneiras pelas quais a Tracy-TD pode acrescentar valor à sua empresa:
 
-## ** Identificação e Priorização de Dívidas Técnicas**
+## **Identificação e Priorização de Dívidas Técnicas**
 A Tracy-TD permite que sua empresa identifique e acompanhe de forma minuciosa as dívidas técnicas existentes em seus projetos de software. Com ferramentas e métricas avançadas, você poderá visualizar e priorizar as dívidas técnicas com base em critérios técnicos e de negócios. Isso ajuda a focar os esforços da equipe de desenvolvimento na resolução dos problemas mais críticos, evitando o acúmulo de débitos técnicos no futuro.
 
 

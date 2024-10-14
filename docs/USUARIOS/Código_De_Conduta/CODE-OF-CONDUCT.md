@@ -1,4 +1,4 @@
-# CÓDIGO DE CONDUTA
+# Código de Conduta Tracy-TD
 
 Inicialmente, expressamos nossa sincera gratidão pela sua presença neste ambiente, onde nos alegra imensamente tê-lo como colaborador da Tracy-TD. O projeto em questão consiste em uma plataforma de gestão de débitos técnicos voltada para o contexto empresarial.
 
